@@ -149,7 +149,8 @@ public class ConversationHandler {
 
             @Override
             public void onError(ErrorInfo errorInfo) {
-                CallbackListener.super.onError(errorInfo);
+                System.out.println("addParticipant: failed to get conversation: " + errorInfo.getMessage());
+                result.success(errorInfo.getMessage());
             }
         });
     }
